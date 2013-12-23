@@ -54,14 +54,14 @@
 
                 {elseif $renderer->isButton($control)}
 
-                    <div class="controls">
+                    <div class="controls col-lg-10">
 						{$renderer::mergeAttrs($form[$name]->getControl(), $attrs['input'])}{$error}{$description}
                     </div>
 
                 {elseif $renderer->isCheckbox($control)}
 
 					{var $label = $renderer::mergeAttrs($form[$name]->getLabel(), $attrs['label'])}
-                    <div class="controls" n:tag-if="!$renderer->controlHasClass($control, 'inline')">
+                    <div class="controls col-lg-10" n:tag-if="!$renderer->controlHasClass($control, 'inline')">
                         {!$label->startTag()}{$renderer::mergeAttrs($form[$name]->getControl(), $attrs['input'])}{$renderer->getLabelBody($control)}{!$label->endTag()}{$error}{$description}
                     </div>
 
@@ -69,7 +69,7 @@
 
                     {$renderer::mergeAttrs($form[$name]->getLabel()->addClass("control-label"), $attrs['label'])}
 
-                    <div class="controls">
+                    <div class="controls col-lg-10">
                         {foreach $renderer->getRadioListItems($control) as $item}
 
                             {$renderer::mergeAttrs($item->html, $attrs['input'])}
@@ -80,7 +80,7 @@
 
                     {$renderer::mergeAttrs($form[$name]->getLabel()->addClass("control-label"), $attrs['label'])}
 
-                    <div class="controls">
+                    <div class="controls col-lg-10">
                         {foreach $renderer->getCheckboxListItems($control) as $item}
 
                             {$renderer::mergeAttrs($item->html, $attrs['input'])}
@@ -91,7 +91,7 @@
 
                     {$renderer::mergeAttrs($form[$name]->getLabel(), $attrs['label'])}
 
-                    <div class="controls">
+                    <div class="controls col-lg-10">
                         {var $prepend = $control->getOption('input-prepend'), $append = $control->getOption('input-append')}
                         <div n:class="$prepend? input-prepend, $append? input-append" n:tag-if="$prepend || $append">
                             {$prepend}{$renderer::mergeAttrs($form[$name]->getControl(), $attrs['input'])}{$append}
