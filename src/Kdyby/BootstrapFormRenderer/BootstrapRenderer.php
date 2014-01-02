@@ -178,7 +178,7 @@ class BootstrapRenderer extends Nette\Object implements Nette\Forms\IFormRendere
 		}
 
 		if ($control instanceof Nette\Forms\ISubmitterControl) {
-			$el->addClass('btn');
+			$el->addClass('btn')->addClass('btn-default');
 
 		} else {
 			$label = $control->labelPrototype;
