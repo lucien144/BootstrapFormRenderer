@@ -67,7 +67,7 @@
 
                 {elseif $renderer->isRadioList($control)}
 
-                    {$renderer::mergeAttrs($form[$name]->getLabel()->addClass("control-label"), $attrs['label'])}
+                    {$renderer::mergeAttrs($form[$name]->getLabel()->addClass("control-label")->addClass("col-lg-2"), $attrs['label'])}
 
                     <div class="controls col-lg-10">
                         {foreach $renderer->getRadioListItems($control) as $item}
